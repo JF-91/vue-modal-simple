@@ -7,16 +7,20 @@ const open = ref(false)
 
 defineEmits(['on:close']);
 
+const closeModal = () => {
+    open = false;
+}
+
 </script>
 
 <template>
 
     <!-- <ExampleComponent v-if="open"/> -->
 
-    <div class="button-container">
+    <div class="button-container"  >
 
         <button @click="open = !open">here link</button>
-        <ModalCustom v-if="open" @on:close="open = false">
+        <ModalCustom v-if="open" @on:close="open = false" @keydown.esc="closeModal">
             <template #header>
                 <header>
                     <IconX @click="open = !open" class="icon"/>

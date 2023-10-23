@@ -1,11 +1,13 @@
 <template>
-    <div class="container" @click.self="$emit('on:close')" >
+    <div class="container" @click.self="$emit('on:close')">
         <slot  name="header"/>
         <slot  name="body"/>
     </div>
 </template>
 <script setup>
-defineEmits(['on:close']);
+defineEmits(['on:close' ]);
+
+
 </script>
 <style lang="scss" scoped>
     .container{
